@@ -6,9 +6,11 @@ def isPalindrome(temp):
     test = temp[::-1]
 
     if(test == temp):
+        print("This is a palindrome")
         return True
 
     else:
+        print("This is not a palindrome")
         return False
 
 ## has input to receive two numbers
@@ -38,3 +40,4 @@ isPalindrome("hey")
 isPalindrome("creep")
 isPalindrome("101")
 isPalindrome("1.2")
+isPalindrome(505)
