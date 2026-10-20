@@ -30,3 +30,11 @@ def log2(num):
     except TypeError:
         return "Error: Input must be a number."
 
+## fuction calls
+##Palindrome test
+isPalindrome("abba")
+isPalindrome("ata")
+isPalindrome("hey")
+isPalindrome("creep")
+isPalindrome("101")
+isPalindrome("1.2")
