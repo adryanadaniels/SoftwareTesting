@@ -3,14 +3,21 @@ import math
 ## takes in a string -- reverses it
 ## then compares the two
 def isPalindrome(temp):
-    test = temp[::-1]
 
-    if(test == temp):
-        print("This is a palindrome")
-        return True
-
-    else:
-        print("This is not a palindrome")
+    #put the code into a try except block to catch any errors
+    #or
+    #convert the input to a string to handle non-string inputs
+    temp = str(temp)
+    try:
+        test = temp[::-1]
+        if(test == temp):
+            print("This is a palindrome")
+            return True
+        else:
+            print("This is not a palindrome")
+            return False
+    except TypeError:
+        print("Error: Input must be a string.")
         return False
 
 ## has input to receive two numbers
@@ -39,5 +46,6 @@ isPalindrome("ata")
 isPalindrome("hey")
 isPalindrome("creep")
 isPalindrome("101")
-isPalindrome("1.2")
+isPalindrome(1.2)
 isPalindrome(505)
+
