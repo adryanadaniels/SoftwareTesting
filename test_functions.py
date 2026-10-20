@@ -1,20 +1,15 @@
 import pytest
+import math
 from functions import *
 
 
 # test function 4
 #what happens when asserting a palidrome
-@pytest.mark.parametrize("temp", ["abba", "ata", "eye"])
-def test_isPalidrome(temp):
-    assert isPalindrome(temp) == True
-@pytest.mark.parametrize("temp", ["hey", "creep", "shy"])
-def test_isPalidrome(temp):
-    assert isPalindrome(temp) == False
-## testing outliars
-@pytest.mark.parametrize("temp", ["alpha", "loll", "winw"])
-def test_isPalidrome(temp):
-    assert isPalindrome(temp) == True
-@pytest.mark.parametrize("temp", ["1", "1.2", "303"])
+@pytest.mark.parametrize("temp", ["abba", "ata", "eye", "hey", "creep", "shy", "alpha", "loll", "winw", "1", "1.2", "303"])
 def test_isPalidrome(temp):
     assert isPalindrome(temp) == True
 
+#testing the log2 function
+@pytest.mark.parametrize("num", [1, 2, "hello", 8, 5.5, -1,0])
+def test_log2(num):
+    assert log2(num) == math.log2(num)
