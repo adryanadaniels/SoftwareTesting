@@ -7,24 +7,25 @@ def isPalindrome(temp):
     #put the code into a try except block to catch any errors
     #or
     #convert the input to a string to handle non-string inputs
-    temp = str(temp)
+    #temp = str(temp)
     try:
         test = temp[::-1]
         if(test == temp):
-            print("This is a palindrome")
             return True
         else:
-            print("This is not a palindrome")
             return False
     except TypeError:
-        print("Error: Input must be a string.")
-        return False
-
+        print("v Error: Input must be a string.")
+        return False 
+    
 ## has input to receive two numbers
 ## divides the two, then outputs the result
 def divide():
     num1 = int(input("Enter a number: "))
     num2 = int(input("Enter another number: "))
+    while num2 == 0:
+        print("Error: Cannot divide by zero.")
+        num2 = int(input("Enter another number: "))
 
     div = num1 / num2
 
@@ -35,17 +36,28 @@ def log2(num):
     try:
         return math.log2(num)
     except ValueError:
-        return "Error: Input must be a positive number."
+        return "Error: Input must be a positive number"
     except TypeError:
         return "Error: Input must be a number."
 
 ## fuction calls
 ##Palindrome test
-isPalindrome("abba")
-isPalindrome("ata")
-isPalindrome("hey")
-isPalindrome("creep")
-isPalindrome("101")
-isPalindrome(1.2)
-isPalindrome(505)
+print(isPalindrome("abba"))
+print(isPalindrome("ata"))
+print(isPalindrome("hey"))
+print(isPalindrome("creep"))
+print(isPalindrome("101"))
+print(isPalindrome(1.2))
+print(isPalindrome(505))
+print("\n")
+##divide test
+divide()
+print("\n")
+##log2 test
+print(log2(1))
+print(log2(2))
+print(log2("hello"))
+print(log2(1.2))
+print(log2(-1))
+print(log2(0))
 
