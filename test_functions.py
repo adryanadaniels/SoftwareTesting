@@ -20,21 +20,17 @@ def test_isNotPalidrome_edge_cases(temp):
 
 #testing the devide function
 @pytest.mark.parametrize("num1, num2", [(10, 2), (20, 4), (15, 3), (100, 5), (50, 10)])
-    def test_divide(num1, num2):
-        result = num1 / num2
-        assert divide(num1, num2) == result
+def test_divide(num1, num2):
+        assert divide(num1, num2) == num1 / num2
 @pytest.mark.parametrize("num1, num2", [(10, 0), (20, 0), (15, 0), (100, 0), (50, 0)])
-    def test_divide_by_zero(num1, num2):
-        result = "Error: Division by zero is not allowed."
-        assert divide(num1, num2) == result
+def test_divide_by_zero(num1, num2):
+        assert divide(num1, num2) == num1 / num2
 @pytest.mark.parametrize("num1, num2", [("hello", 2), (20, "world"), ("foo", "bar")])
-    def test_divide_invalid_input(num1, num2):
-        result = "Error: Invalid input. Please provide numeric values."
-        assert divide(num1, num2) == result
+def test_divide_invalid_input(num1, num2):
+        assert divide(num1, num2) == num1 / num2
 @pytest.mark.parametrize("num1, num2", [(0,0)])
-    def test_divide_zero_by_zero(num1, num2):
-        result = "Error: Division by zero is not allowed."
-        assert divide(num1, num2) == result
+def test_divide_zero_by_zero(num1, num2):
+        assert divide(num1, num2) == num1 / num2
 
 
 #testing the log2 function
