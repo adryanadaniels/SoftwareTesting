@@ -15,20 +15,29 @@ def isPalindrome(temp):
         else:
             return False
     except TypeError:
-        print("v Error: Input must be a string.")
         return False 
     
 ## has input to receive two numbers
 ## divides the two, then outputs the result
 def divide():
-    num1 = int(input("Enter a number: "))
-    num2 = int(input("Enter another number: "))
-    while num2 == 0:
-        print("Error: Cannot divide by zero.")
-        num2 = int(input("Enter another number: "))
-
+    check = False
+    while check == False:
+        try:
+            num1 = int(input("Enter a number: "))
+            num2 = int(input("Enter another number: "))
+        except ValueError:
+            print("Error: Invalid input. Please provide numeric values.")
+            check = False
+            continue
+        if num2 == 0:
+            print("Error: Division by zero is not allowed.")
+            check = False
+        elif not isinstance(num1, (int, float)) or not isinstance(num2, (int, float)):
+            print("Error: Invalid input. Please provide numeric values.")
+            check = False
+        else:
+            check = True
     div = num1 / num2
-
     print("Your numbers divided is:", div)
 
 ## returns the log base 2 of a particular number
