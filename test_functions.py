@@ -1,6 +1,6 @@
 import pytest
 import math
-from functions import *
+from functionsfixed import *
 
 
 # test function 4
@@ -16,9 +16,14 @@ def test_int_input():
     assert isPalindrome(12345) == False
 def test_float_input():
     assert isPalindrome(1.21) == False
+def test_floatTrue_input():
     assert isPalindrome(10.01) == True
 def test_empty_string():
     assert isPalindrome("") == True
+def test_list_input():
+    assert isPalindrome([1,2,3]) == False
+def test_none_input():
+    assert isPalindrome(None) == False
 
 #TEST 1
 def geninputs():
@@ -88,5 +93,10 @@ def test_log2_invalid_input():
     assert log2(0) == "Error: Input must be a positive number"
 def test_float_log2():
     assert log2(-1.2) == "Error: Input must be a positive number"
+def test_floatpositive_log():
+    result = log2(3.5)
+    assert log2(3.5) == result
 def test_log2_invalid_input_string():
     assert log2("hello") == "Error: Input must be a number."
+def test_list_input():
+    assert log2([1,3,4]) == "Error: Input must be a number."
